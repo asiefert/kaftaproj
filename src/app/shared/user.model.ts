@@ -1,7 +1,13 @@
 export class User {
-    Username: String;
+    LoginName: String;
     Password: String;
     Email: String;
-    Firstname: String;
-    Lastname: String;
+    FirstName: String;
+    LastName: String;
+    IsTutor: Boolean;
+    IsStudent: Boolean;
+    Information: String;
+    Photo: String;
+    ModifiedDate: String;
+    ModifiedBy: String;
 }
