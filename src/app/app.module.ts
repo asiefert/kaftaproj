@@ -8,9 +8,7 @@ import { SignUpStudentComponent } from './sign-up-student/sign-up-student.compon
 import { SignUpTutorComponent } from './sign-up-tutor/sign-up-tutor.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { SignInOptionsComponent } from './sign-in-options/sign-in-options.component';
-import { SignInStudentComponent } from './sign-in-student/sign-in-student.component';
-import { SignInTutorComponent } from './sign-in-tutor/sign-in-tutor.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +18,7 @@ import { SignInTutorComponent } from './sign-in-tutor/sign-in-tutor.component';
     SignUpTutorComponent,
     HomeComponent,
     FooterComponent,
-    SignInOptionsComponent,
-    SignInStudentComponent,
-    SignInTutorComponent
+    SignInComponent
   ],
   imports: [
     BrowserModule,
