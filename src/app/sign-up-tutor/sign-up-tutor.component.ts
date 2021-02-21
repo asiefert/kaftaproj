@@ -6,7 +6,7 @@ import { User } from '../shared/user.model';
   templateUrl: './sign-up-tutor.component.html',
   styleUrls: ['./sign-up-tutor.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpTutorComponent implements OnInit {
 
   user:User;
   constructor() { }
