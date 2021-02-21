@@ -1,0 +1,27 @@
+.container-full-bg {
+    background: url("../../assets/img/home-jumbotron.jpg") no-repeat center;
+    background-clip: border-box;
+    background-size: cover;
+    height: 60vh;
+}
+.jumbotron {
+    background-color:transparent;
+    
+}
+#slogan {
+    color: #FFF;
+    text-shadow: 1px 1px #0e0e0e;
+    z-index:999;
+}
+
+#slogan2 {
+    font-size: 24px;
+    font-weight:600;
+    color: #FFF;
+    text-shadow: 1px 1.2px #0e0e0e;
+}
+
+#blurb {
+    margin-top:40px;
+    margin-bottom:40px;
+}
