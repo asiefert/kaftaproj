@@ -9,6 +9,12 @@ import { SignUpTutorComponent } from './sign-up-tutor/sign-up-tutor.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { MemberComponent } from './member/member.component';
+import { ShowallmembersComponent } from './member/showallmembers/showallmembers.component';
+import { SharedService } from './shared.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +24,17 @@ import { SignInComponent } from './sign-in/sign-in.component';
     SignUpTutorComponent,
     HomeComponent,
     FooterComponent,
-    SignInComponent
+    SignInComponent,
+    MemberComponent,
+    ShowallmembersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

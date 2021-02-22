@@ -1,0 +1,41 @@
+<table class="table table-striped">
+  <thead>
+      <tr>
+        <th> Photos </th>
+        <th>
+          FirstName
+        </th>
+        <th>
+            LastName
+          </th>
+          <th>
+           Login Name
+          </th>
+        <th>
+            Email
+          </th>
+          <th>
+            isTutor
+          </th>
+          <th>
+            isStudent
+          </th>
+          <th>
+            information
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let dataitem of UserList">
+          <td></td>
+          <td>{{dataitem.FirstName}}</td>
+          <td>{{dataitem.LastName}}</td>
+          <td>{{dataitem.loginName}}</td>
+          <td>{{dataitem.Email}}</td>
+          <td>{{dataitem.isTutor}}</td>
+          <td>{{dataitem.isStudent}}</td>
+          <td>{{dataitem.information}}</td>
+      </tr>
+  </tbody>
+
+</table>
