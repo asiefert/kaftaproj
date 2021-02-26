@@ -11,18 +11,17 @@ export class ShowallmembersComponent implements OnInit {
 
   constructor(private service: SharedService) { }
 
-  UserList: any = [];
-  checkstring: any = [];
+  TutorList: any = [];
+  PhotoFilePath!: string;
 
   ngOnInit(): void {
-    this.refreshUserList();
+    this.refreshTutorList();
   }
 
-  refreshUserList() {
-    this.checkstring = "ABN";
-    this.service.getUserList().subscribe(data => {
-      this.checkstring = data;
-      this.UserList = data;
+  refreshTutorList() {
+    this.service.getTutorList().subscribe(data => {
+      this.TutorList = data;
+      this.PhotoFilePath = this.service.PhotoUrl + "/";
     });
   }
 
