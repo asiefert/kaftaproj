@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatchUsersComponent } from './match-users/match-users.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ContactComponent } from './contact/contact.component';
     MemberComponent,
     ShowallmembersComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
+    MatchUsersComponent
   ],
   imports: [
     BrowserModule,

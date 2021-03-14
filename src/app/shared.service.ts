@@ -9,11 +9,10 @@ import { Observable } from 'rxjs';
 export class SharedService {
 
 
-  // readonly APIUrl = "http://localhost:1337/api";
-  // readonly PhotoUrl = "http://localhost:1337/photos";
-  readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
-  readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
-
+  readonly APIUrl = "http://localhost:3000/api";
+  readonly PhotoUrl = "http://localhost:3000/photos";
+  // readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
+  // readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
   constructor(private http: HttpClient) { }
 
   getUserList(): Observable<any[]> {
@@ -32,6 +31,11 @@ export class SharedService {
 
   getTutorList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/tutors');
+  }
+
+  //TODO: Remove hardcoding and let user be selected automatically when signed in
+  getMatchList(val:any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/students/match/' + val);
   }
 
   // uploadPhoto(val: any) {

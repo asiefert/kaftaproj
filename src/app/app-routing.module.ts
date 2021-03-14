@@ -8,6 +8,7 @@ import { SignUpTutorComponent } from './sign-up-tutor/sign-up-tutor.component';
 import { MemberComponent } from './member/member.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
+import { MatchUsersComponent } from './match-users/match-users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'register-tutor', component: SignUpTutorComponent },
   { path: 'member', component: MemberComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'match', component: MatchUsersComponent }
 
 ];
 

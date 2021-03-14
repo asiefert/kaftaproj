@@ -21,6 +21,7 @@ export class ShowallmembersComponent implements OnInit {
   refreshTutorList() {
     this.service.getTutorList().subscribe(data => {
       this.TutorList = data;
+      console.log(this.TutorList);
       this.PhotoFilePath = this.service.PhotoUrl + "/";
     });
   }
