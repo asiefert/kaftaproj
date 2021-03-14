@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatchUsersComponent } from './match-users/match-users.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatchUsersComponent } from './match-users/match-users.component';
     ShowallmembersComponent,
     AboutUsComponent,
     ContactComponent,
-    MatchUsersComponent
+    MatchUsersComponent,
+    AdminEditComponent
   ],
   imports: [
     BrowserModule,
