@@ -1,6 +1,5 @@
 
-<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It
-  will also get the authenticated user's matches only.</h4>
+<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It will also get the authenticated Admin's matches only.</h4>
 
 <div class="container">
 
@@ -8,7 +7,7 @@
 
   <table class="table table-striped">
     <tbody>
-        <tr *ngFor="let dataitem of TutorList">
+        <tr *ngFor="let dataitem of UserList">
           <td><img src="{{PhotoFilePath}}{{dataitem.photo}}"  height="250px;" width="200px;"> <br> {{dataitem.FirstName}} <br> </td>
           <td>{{dataitem.FirstName}} <br> {{dataitem.email}} <br> {{dataitem.information}} <br>
             <button type="button" class="btn btn-primary float-right m-2"

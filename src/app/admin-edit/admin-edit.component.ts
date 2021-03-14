@@ -10,17 +10,17 @@ export class AdminEditComponent implements OnInit {
 
   constructor(private service: SharedService) { }
 
-  TutorList: any = [];
+  UserList: any = [];
   PhotoFilePath!: string;
 
   ngOnInit(): void {
-    this.refreshTutorList();
+    this.refreshUserList();
   }
 
-  refreshTutorList() {
-    this.service.getTutorList().subscribe(data => {
-      this.TutorList = data;
-      console.log(this.TutorList);
+  refreshUserList() {
+    this.service.getUserList().subscribe(data => {
+      this.UserList = data;
+      console.log(this.UserList);
       this.PhotoFilePath = this.service.PhotoUrl + "/";
     });
   }
