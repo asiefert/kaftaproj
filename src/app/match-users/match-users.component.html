@@ -1,0 +1,58 @@
+<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It
+  will also get the authenticated user's matches only.</h4>
+
+<h1 class="text-center">Here are tutors that match with your interest and budget:</h1>
+<br>
+<!-- This should only show up if Matching Tutors is not an array but does exist-->
+<div *ngIf="MatchingTutors.length === 0 && MatchingTutors" class="container">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td><img src="{{PhotoFilePath}}{{MatchingTutors.photo}}" height="250px;" width="200px;"></td>
+        <td>First Name: {{MatchingTutors.FirstName}}<br> Last Name: {{MatchingTutors.LastName}} <br> Subject:
+          {{MatchingTutors.Subject}} <br> Price: ${{MatchingTutors.price}} </td> <br>
+        <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+          data-backdrop="static" data-keyboard="false">
+          View Video
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--This should show up if there is more than one matching tutor -->
+<div *ngIf="MatchingTutors.length > 0" class="container">
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let dataitem of MatchingTutors">
+        <td><img src="{{PhotoFilePath}}{{dataitem.photo}}" height="250px;" width="200px;"></td>
+        <td>First Name: {{dataitem.FirstName}}<br> Last Name: {{dataitem.LastName}} <br> Subject:
+          {{dataitem.Subject}} <br> Price: ${{dataitem.price}} <br>
+          <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+            data-backdrop="static" data-keyboard="false">
+            View Video
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</div>
