@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 export class SharedService {
 
 
-  readonly APIUrl = "http://localhost:3000/api";
-  readonly PhotoUrl = "http://localhost:3000/photos";
-  // readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
-  // readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
+  // readonly APIUrl = "http://localhost:3000/api";
+  // readonly PhotoUrl = "http://localhost:3000/photos";
+  readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
+  readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
   constructor(private http: HttpClient) { }
 
   getUserList(): Observable<any[]> {

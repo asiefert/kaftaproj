@@ -1,39 +1,24 @@
-
-<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It will also get the authenticated Admin's matches only.</h4>
+<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It will also get the authenticated Admins only.</h4><br>
 
 <div class="container">
 
   <h5 class="d-flex justify-content-center"> Choose one Registered User to Edit</h5>
-
+  <br>
   <table class="table table-striped">
     <tbody>
         <tr *ngFor="let dataitem of UserList">
-          <td><img src="{{PhotoFilePath}}{{dataitem.photo}}"  height="250px;" width="200px;"> <br> {{dataitem.FirstName}} <br> </td>
-          <td>{{dataitem.FirstName}} <br> {{dataitem.email}} <br> {{dataitem.information}} <br>
-            <button type="button" class="btn btn-primary float-right m-2"
-            data-toggle="modal" data-target="#exampleModal"
-  
-            data-backdrop="static" data-keyboard="false">
-                View Video
-            </button>
-  
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document" >
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"></h5>
-                      <button type="button" class="close"
-                      data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-  
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <td ng-controller="SiblingOneCtrl as sib1" class="ng-scope">{{dataitem.UserId}}</td>
+          <td>{{dataitem.LastName}}, {{dataitem.FirstName}}</td>
+          <td>{{dataitem.email}}</td>
+          <td>
+            <!-- Condition to type users -->
+            <div *ngIf="dataitem.isTutor == 1 && dataitem.isStudent == 0">Tutor</div>
+            <div *ngIf="dataitem.isTutor == 0 && dataitem.isStudent == 1">Student</div>
+            <div *ngIf="dataitem.isTutor == 0 && dataitem.isStudent == 0">Administrator</div>
+          </td>
+          <td>
+            <!-- Edit Button -->
+            <a class="nav-link" routerLink="/edit" routerLinkActive="active">Edit</a>
           </td>
   
         </tr>

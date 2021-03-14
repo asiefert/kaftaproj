@@ -19,6 +19,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatchUsersComponent } from './match-users/match-users.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     AboutUsComponent,
     ContactComponent,
     MatchUsersComponent,
-    AdminEditComponent
+    AdminEditComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
