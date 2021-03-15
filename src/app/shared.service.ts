@@ -22,8 +22,9 @@ export class SharedService {
   addUser(val: any) {
     return this.http.post(this.APIUrl + '/users', val);
   }
-  updateUser(val: any) {
-    return this.http.put(this.APIUrl + '/users', val);
+  // Frank edited this updateUser(){}
+  updateUser(userID: any, val: any) {
+    return this.http.put(this.APIUrl + '/users/' + userID, val);
   }
   deleteUser(val: any) {
     return this.http.delete(this.APIUrl + '/users/' + val);
