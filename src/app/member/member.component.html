@@ -1,25 +1,18 @@
-
-
-
 <div class="container">
-
-  <h3 class="d-flex justify-content-center"> Find the best professional tutor for you </h3>
-  <h5 class="d-flex justify-content-center"> Choose one of our experienced tutors and
-    receive the best learning experience online! Reliable tutors you will find
-    and meets all your requirements and fits your needs and learning objectives.</h5>
-
   <nav class="navbar navbar-expand-sm bg-light navba-dark">
     <ul class="navbar-nav">
       <li class="nav-item">
-          <button routerLink="studentschedule"
-        class="m-1 btn btn-light btn-outline-primary" Button>create your schedule</button>
+        <button (click)="displayManageCalendar();" class=" m-1 btn btn-light btn-outline-primary" Button>create your
+          schedule</button>
       </li>
       <li class="nav-item">
-        <button routerLink="viewschedule"
-        class="m-1 btn btn-light btn-outline-primary" Button>view your schedule</button>
-    </li>
+        <button (click)="displayviewcalendar();" class=" m-1 btn btn-light btn-outline-primary" Button>view your
+          schedule</button>
+      </li>
     </ul>
   </nav>
   <br>
-  <app-showallmembers></app-showallmembers>
+  <app-managecalendar *ngIf="managecalendar"></app-managecalendar>
+  <app-viewcalendar *ngIf="viewcalendar"></app-viewcalendar>
+  <app-showallmembers *ngIf="displaymember"></app-showallmembers>
 </div>

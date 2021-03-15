@@ -20,6 +20,14 @@ import { ContactComponent } from './contact/contact.component';
 import { MatchUsersComponent } from './match-users/match-users.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { EditComponent } from './edit/edit.component';
+import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
+import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -36,13 +44,16 @@ import { EditComponent } from './edit/edit.component';
     ContactComponent,
     MatchUsersComponent,
     AdminEditComponent,
-    EditComponent
+    EditComponent,
+    ViewcalendarComponent,
+    ManagecalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

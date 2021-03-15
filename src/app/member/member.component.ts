@@ -7,7 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberComponent implements OnInit {
 
-  constructor() { }
+  displaymember: any = [];
+  viewcalendar: any = [];
+  managecalendar: any = [];
+
+
+  displayManageCalendar() {
+    this.displaymember = '';
+    this.viewcalendar = '';
+    this.managecalendar = true;
+  }
+
+  displayviewcalendar() {
+    this.displaymember = '';
+    this.viewcalendar = true;
+    this.managecalendar = '';
+  }
+  constructor() {
+    this.displaymember = true;
+    this.viewcalendar = '';
+    this.managecalendar = '';
+  }
 
   ngOnInit(): void {
   }

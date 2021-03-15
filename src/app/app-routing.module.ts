@@ -12,6 +12,9 @@ import { MatchUsersComponent } from './match-users/match-users.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { EditComponent } from './edit/edit.component';
 
+// import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
+// import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: SignInComponent },
@@ -22,7 +25,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'match', component: MatchUsersComponent },
   { path: 'admin-edit', component: AdminEditComponent },
-  { path: 'edit', component: EditComponent }
+  // { path: 'managecalendar', component: ManagecalendarComponent },
+  // { path: 'viewcalendar', component: ViewcalendarComponent },
 
 ];
 

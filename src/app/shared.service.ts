@@ -29,13 +29,23 @@ export class SharedService {
     return this.http.delete(this.APIUrl + '/users/' + val);
   }
 
+  // tutor
   getTutorList(): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/tutors');
   }
 
   //TODO: Remove hardcoding and let user be selected automatically when signed in
-  getMatchList(val:any): Observable<any[]> {
+  getMatchList(val: any): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/students/match/' + val);
+  }
+
+  // schedule
+  getTutorScheduleList(val: any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/schedules/tutorid/' + val);
+  }
+
+  getStudentScheduleList(val: any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/schedules/studentid/' + val);
   }
 
   // uploadPhoto(val: any) {
