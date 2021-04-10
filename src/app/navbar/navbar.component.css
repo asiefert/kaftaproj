@@ -14,7 +14,7 @@
 }
 
 .navbar-purple #register,
-.navbar-purple #login {
+.navbar-purple #login, #logout {
   border: 1px solid var(--light-purple);
   border-radius: 6px;
 }

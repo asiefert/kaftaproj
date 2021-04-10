@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-admin-edit',
@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared.service';
 
 export class AdminEditComponent implements OnInit {
 
-  constructor(private service:SharedService) { }
+  constructor(private auth: AuthService) { }
 
   UserList: any = [];
 
@@ -18,10 +18,15 @@ export class AdminEditComponent implements OnInit {
   }
 
   refreshUserList() {
-    this.service.getUserList().subscribe(data => {
+    this.auth.getUserList().subscribe(data => {
       this.UserList = data;
       console.log(this.UserList);
     });
+
+    // this.service.getUserList().subscribe(data => {
+    //   this.UserList = data;
+    //   console.log(this.UserList);
+    // });
   }
 }
 

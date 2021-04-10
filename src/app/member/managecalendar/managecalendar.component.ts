@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-managecalendar',

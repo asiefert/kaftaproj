@@ -9,17 +9,18 @@ import { Observable } from 'rxjs';
 export class SharedService {
 
 
-  // readonly APIUrl = "http://localhost:3000/api";
-  // readonly PhotoUrl = "http://localhost:3000/photos";
-  readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
-  readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
+  readonly APIUrl = "http://localhost:1337/api";
+  readonly PhotoUrl = "http://localhost:1337/photos";
+  //readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
+  //readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
   constructor(private http: HttpClient) { }
 
   getUserList(): Observable<any[]> {
-    console.log(this.APIUrl + '/users');
+    // console.log(this.APIUrl + '/users');
     return this.http.get<any>(this.APIUrl + '/users');
   }
   addUser(val: any) {
+    console.log(val);
     return this.http.post(this.APIUrl + '/users', val);
   }
   // Frank edited this updateUser(){}

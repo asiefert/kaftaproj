@@ -11,7 +11,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { MemberComponent } from './member/member.component';
 import { ShowallmembersComponent } from './member/showallmembers/showallmembers.component';
-import { SharedService } from './shared.service';
+import { SharedService } from './shared/shared.service';
+
+import { AuthService } from './shared/auth.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,7 +25,9 @@ import { EditComponent } from './edit/edit.component';
 import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
 import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FindTutorComponent } from './find-tutor/find-tutor.component'; // a plugin
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin
@@ -46,7 +50,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AdminEditComponent,
     EditComponent,
     ViewcalendarComponent,
-    ManagecalendarComponent
+    ManagecalendarComponent,
+    SignUpComponent,
+    FindTutorComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormsModule,
     FullCalendarModule
   ],
-  providers: [SharedService],
+  providers: [SharedService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

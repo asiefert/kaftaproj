@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-edit',
@@ -23,8 +23,8 @@ export class EditComponent implements OnInit {
     //   console.log(this.User);
     //   //this.PhotoFilePath = this.service.PhotoUrl + "/";
     // });
-    
-    const editMock = {UserId:userID,FirstName:"mike123",LastName:"Ten123",loginName:"benten",password:"12345",email:"benten@gmail.com",isTutor:0,isStudent:1,information:"Testing users",photo:"alien.png",modifiedDate:"0000-00-00",modifiedBy:"system"};
+
+    const editMock = { UserId: userID, FirstName: "mike123", LastName: "Ten123", loginName: "benten", password: "12345", email: "benten@gmail.com", isTutor: 0, isStudent: 1, information: "Testing users", photo: "alien.png", modifiedDate: "0000-00-00", modifiedBy: "system" };
     console.log(editMock);
     this.service.deleteUser([15]);
 

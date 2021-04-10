@@ -1,68 +1,40 @@
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">User Registration [Student]</h5>
-                <form class="col-md-12" >
-                    <div class="row">
-                        <div class="col col-md-6">
-                            <input type="text" class="form-control" placeholder="First name" name="FirstName">  
-                        </div>
-                        <div class="col col-md-6">
-                            <input type="text" class="form-control" placeholder="Last name" name="LastName">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col col-md-12">
-                            <input type="email" class="form-control" placeholder="Email" name="Email">  
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col col-md-6">
-                            <input type="string" class="form-control" placeholder="Login Name" name="LoginName">  
-                        </div>
-                        <br>
-                        <div class="col col-md-6">
-                            <input type="password" class="form-control" placeholder="Password" name="Password">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <div class="col-sm-2">You are a:</div>
-                        <div class="col-sm-10">
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" id="IsStudent" checked>
-                            <label class="form-check-label" for="IsStudent">
-                              Student
-                            </label>
-                          </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col col-md-12">
-                            <label class="form-check-label" for="information">
-                                Bio
-                            </label>
-                            <textarea class="form-control" id="information" name="Information"></textarea>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Photo</label>
-                        <input type="file" class="form-control-file" id="Photo">
-                    </div>
-                    <br>
-                    <a href="#" class="btn btn-primary">Submit</a>
-                </form>
-              </div>
-              <div class="mx-auto" style="width: 450px;">
-                <a class="nav-link" routerLink="/register-tutor" routerLinkActive="active">Not a student? Click here to register as a tutor instead.</a>
-              </div>
-              <br>
-        </div>
+  <div class="col-md-8 offset-md-2">
+    <br>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">User Registration [Student]</h5>
+        <form class="col-md-12">
+          <div class="row">
+            <div class="col col-md-6">
+              <input type="text" class="form-control" placeholder="Interest" name="Interest">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col col-md-12">
+              <input type="email" class="form-control" placeholder="Information" name="Information">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col col-md-6">
+              <input type="string" class="form-control" placeholder="Link" name="Link">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col col-md-6">
+              <input type="string" class="form-control" placeholder="Budget Price" name="Budgetprice">
+            </div>
+          </div>
+          <br>
+          <button class="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+      <br>
     </div>
+  </div>
 </div>

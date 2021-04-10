@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   title = 'Kafta';
-  constructor() { }
+  isAuthenticated!: boolean;
 
-  ngOnInit(): void {
+  constructor(public auth: AuthService) {
+
   }
 
 }
