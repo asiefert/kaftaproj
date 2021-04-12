@@ -12,9 +12,13 @@ import { FindTutorComponent } from './find-tutor/find-tutor.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatchUsersComponent } from './match-users/match-users.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { TakeQuizComponent } from './quizzes/take-quiz/take-quiz.component';
 import { EditComponent } from './edit/edit.component';
 
 import { AuthGuard } from './auth.guard';
+import { ResultsComponent } from './quizzes/take-quiz/results/results.component';
+import { CreateQuizComponent } from './quizzes/create-quiz/create-quiz.component';
 
 // import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
 // import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
@@ -33,6 +37,10 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
   { path: 'match', component: MatchUsersComponent, canActivate: [AuthGuard] },
   { path: 'admin-edit', component: AdminEditComponent, canActivate: [AuthGuard] },
+  { path: 'quizzes', component: QuizzesComponent, canActivate: [AuthGuard] },
+  { path: 'quizzes/take/:id', component: TakeQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quizzes/results', component: ResultsComponent, canActivate: [AuthGuard] },
+  { path: 'quizzes/create', component: CreateQuizComponent, canActivate: [AuthGuard] }
   // { path: 'managecalendar', component: ManagecalendarComponent },
   // { path: 'viewcalendar', component: ViewcalendarComponent },
 

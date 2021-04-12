@@ -27,7 +27,11 @@ import { ManagecalendarComponent } from './member/managecalendar/managecalendar.
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { FindTutorComponent } from './find-tutor/find-tutor.component'; // a plugin
+import { FindTutorComponent } from './find-tutor/find-tutor.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { TakeQuizComponent } from './quizzes/take-quiz/take-quiz.component';
+import { ResultsComponent } from './quizzes/take-quiz/results/results.component';
+import { CreateQuizComponent } from './quizzes/create-quiz/create-quiz.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin
@@ -52,7 +56,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ViewcalendarComponent,
     ManagecalendarComponent,
     SignUpComponent,
-    FindTutorComponent
+    FindTutorComponent,
+    QuizzesComponent,
+    TakeQuizComponent,
+    ResultsComponent,
+    CreateQuizComponent,
   ],
   imports: [
     BrowserModule,

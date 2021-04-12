@@ -1,0 +1,19 @@
+<h1 class="text-center">Create a quiz</h1>
+<div class="container">
+
+  <form>
+    <div class="form-group row">
+      <label for="jsondataLabel" class="col-sm-2 col-form-label">Please Paste JSON here or edit our starter
+        template. Minimum 2 questions. If this is your first time editing JSON and you need our help, please contact us, or see our guide for more help.</label>
+      <div class="col-sm-10">
+        <textarea name="jsonData" #textarea col=50 rows=50 class="form-control" id="jsonInput" [(ngModel)]="textVal" required></textarea>
+      </div>
+    </div>
+    <div class="container text-center">
+        <p *ngIf="(this.error)" class="text-danger">Cannot Submit Quiz:
+            <br> {{this.error}}</p>
+        <p *ngIf="!(this.error) && this.QuizData.length > 0">Quiz Submitted</p>
+        <button type="submit" class="btn btn-primary" (click)="validate(textVal)">Submit for Validation</button>
+    </div>
+  </form>
+</div>

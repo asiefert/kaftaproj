@@ -1,0 +1,11 @@
+<div class="container text-center" *ngIf="this.percentScore !== undefined">
+    <h1>Summary of your attempt:</h1>
+    <br>
+    <h3>Number of Questions: {{this.quizData.questions.length}}</h3>
+    <br>
+    <h3>You got: {{this.score}} out of {{this.quizData.questions.length}}</h3>
+    <br>
+    <h3>Score: {{this.percentScore}}%</h3>
+    <h3 *ngIf="this.percentScore > 85">Congratulations!</h3>
+    <button class="btn btn-primary" routerLink="/">Go back home</button>
+</div>

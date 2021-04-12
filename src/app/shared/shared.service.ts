@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class SharedService {
 
-
+  readonly MongoApi = "http://localhost:4000/api/v1/"; //Change to match DB URL in production
   readonly APIUrl = "http://localhost:1337/api";
   readonly PhotoUrl = "http://localhost:1337/photos";
   //readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
@@ -48,6 +48,24 @@ export class SharedService {
 
   getStudentScheduleList(val: any): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/schedules/studentid/' + val);
+  }
+
+  getAvailableQuizzes(): Observable<any[]> {
+    return this.http.get<any>(this.MongoApi + 'quizzes');
+  }
+
+  getQuiz(val: any): Observable<any[]> {
+    return this.http.get<any>(this.MongoApi + 'quizzes/' + val)
+  }
+
+  uploadQuiz(val: any): Observable<any> {
+    const headers = { 'content-type': 'application/json' }
+    const body = JSON.parse(val);
+    return this.http.post(this.MongoApi + 'quizzes/', body, { 'headers': headers, observe: 'response'})
+}
+
+  deleteQuiz(val:any):Observable<any> {
+    return this.http.delete(this.MongoApi + 'quizzes/' + val);
   }
 
   // uploadPhoto(val: any) {

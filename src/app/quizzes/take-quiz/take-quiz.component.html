@@ -1,0 +1,24 @@
+<div class="container" *ngIf="QuizData">
+    <h1 *ngIf="this.percentScore == undefined" class="text-center">Welcome to {{QuizData.quiz_name}}</h1>
+    <h3 *ngIf="this.percentScore !== undefined" class="text-center">Your score for this quiz was: {{this.percentScore}}%</h3>
+  <br>
+  <br>
+  <div *ngFor="let item of QuizData.questions; index as i;" class="form-group text-center">
+    <h2>Question {{i+1}} </h2>
+    <br>
+    <h5>{{item.title}}</h5>
+    <div *ngFor="let answer of this.QuizData.questions[i].answers; index as j">
+        <div class="form-radio">
+            <input class="form-radio-input" name="question" [attr.name]="i+1" type="radio" value="{{answer.title}}" (change)="checkIsCorrect($event,answer)">
+            <label class="form-radio-label">{{answer.title}}</label>
+        </div>
+    </div>
+    <br>
+  </div>
+  <div class="container text-center">
+    <button class="btn btn-lg btn-primary" (click)="checkScore(this.score,QuizData.questions.length)" routerLink="/quizzes/results">Submit Quiz</button>
+  </div>
+
+</div>
+<br>
+<br>

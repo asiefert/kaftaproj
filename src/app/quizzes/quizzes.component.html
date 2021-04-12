@@ -1,0 +1,54 @@
+<br>
+<h3 class="d-flex justify-content-center">View available Quizzes</h3>
+<br>
+<div class="container">
+  <button type="button" routerLink="/quizzes/create" class="btn btn-success float-right">Create New Quiz</button>
+</div>
+<br>
+<br>
+<div *ngIf="QuizList.length === 1 && QuizList" class="container">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Quiz Name: {{QuizList[0].quiz_name}}</td>
+        <td>Quiz Topic: {{QuizList[0].topic}}</td>
+        <td>Quiz Length: {{QuizList[0].questions.length}} Questions</td>
+        <button type="button" routerLink="/quizzes/take/{{QuizList[0]._id}}" class="btn btn-primary float-right m-2">
+          View Quiz
+        </button>
+        <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+        data-backdrop="static" data-keyboard="false">
+        Assign Quiz to Student
+      </button>
+      <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+        data-backdrop="static" data-keyboard="false" (click)="deleteQuizFromList(QuizList[0]._id)">
+        Delete Quiz
+      </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="QuizList.length > 1 && QuizList" class="container">
+    <table class="table table-striped">
+      <tbody>
+        <tr *ngFor="let item of QuizList">
+          <td>Quiz Name: {{item.quiz_name}}</td>
+          <td>Quiz Topic: {{item.topic}}</td>
+          <td>Quiz Length: {{item.questions.length}} Questions</td>
+          <button type="button" routerLink="/quizzes/take/{{item._id}}" class="btn btn-primary float-right m-2">
+            View Quiz
+          </button>
+          <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+          data-backdrop="static" data-keyboard="false">
+          Assign Quiz to Student
+        </button>
+        <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
+        data-backdrop="static" data-keyboard="false" (click)="deleteQuizFromList(QuizList[0]._id)">
+        Delete Quiz
+      </button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
