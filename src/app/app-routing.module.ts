@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'register-tutor', component: SignUpTutorComponent },
 
   { path: 'member', component: MemberComponent, canActivate: [AuthGuard] },
-  { path: 'contact', component: ContactComponent, canActivate: [AuthGuard] },
+  { path: 'contact', component: ContactComponent },
   { path: 'match', component: MatchUsersComponent, canActivate: [AuthGuard] },
   { path: 'admin-edit', component: AdminEditComponent, canActivate: [AuthGuard] },
   { path: 'quizzes', component: QuizzesComponent, canActivate: [AuthGuard] },

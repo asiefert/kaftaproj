@@ -1,17 +1,50 @@
+<!-- 
+<form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [formControl]="name" required>
+    <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [formControl]="email" placeholder="email@example.com" required>
+    <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <textarea matInput [formControl]="message" maxlength="256" placeholder="I'm interested in..." required></textarea>
+    <mat-hint align="end"> {{message.value?.length || 0}}/256</mat-hint>
+    <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
+  </mat-form-field>
+  <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+  <input [formControl]="honeypot" class="hidden" type="text" />
+  <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+    <span>{{responseMessage}}</span>
+  </div>
+</form>
+
+-->
+
 <div class="container-full-bg">
 
   <h1 class="display-3" id="slogan">Contact Us</h1>
-  
-  <form (ngSubmit)="submitForm()">
 
-    <label for="name">Full Name</label>
-    <input type="name" name="name" [(ngModel)]="name" placeholder="Enter your Full Name"><br>
-
-    <label for="email">Email</label>
-    <input type="email" name="email" [(ngModel)]="email" placeholder="Enter email"><br>
-
-    <label for="message">Message</label>
-    <textarea name="message" [(ngModel)]="message"></textarea><br>
-
-    <button type="submit" class="m-1 btn btn-light btn-outline-primary">Send</button>
+  <form (FormGroup)="form" method="post" (ngSubmit)="onSubmit(form.value)">
+    
+    
+      <label for="Email">Email</label>
+      <input type="email" class="form-control" name="Email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="Email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
+      <label for="fullname">Full Name</label>
+      <input type="text" class="form-control" name="Fullname" placeholder="Full Name" formControlName="Fullname">
+    
+      <label for="comment">Comment</label>
+      <textarea class="form-control" formControlName="Comment" name="Comment">
+      </textarea>
+    
+    <button type="submit" class="m-1 btn btn-light btn-outline-primary" [disabled]="!form.valid">Submit</button>
   </form>
+
+</div>
+
