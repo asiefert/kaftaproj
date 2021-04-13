@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MemberComponent } from './member/member.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FindTutorComponent } from './find-tutor/find-tutor.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatchUsersComponent } from './match-users/match-users.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'find-tutor', component: FindTutorComponent },
+  { path: 'contact-form', component: ContactFormComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: SignInComponent },
 
