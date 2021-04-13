@@ -70,6 +70,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     FullCalendarModule
   ],
   providers: [SharedService, AuthService, ContactService],
