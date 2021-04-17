@@ -34,6 +34,9 @@ import { ResultsComponent } from './quizzes/take-quiz/results/results.component'
 import { CreateQuizComponent } from './quizzes/create-quiz/create-quiz.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactService } from './contact.service';
+import { TutoringTypeComponent } from './tutoring-type/tutoring-type.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatRadioModule} from '@angular/material/radio';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin
@@ -64,13 +67,16 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ResultsComponent,
     CreateQuizComponent,
     ContactFormComponent,
+    TutoringTypeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    BrowserAnimationsModule,
+    MatRadioModule
   ],
   providers: [SharedService, AuthService, ContactService],
   bootstrap: [AppComponent]
