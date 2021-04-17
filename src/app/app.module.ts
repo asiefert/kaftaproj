@@ -37,6 +37,7 @@ import { ContactService } from './contact.service';
 import { TutoringTypeComponent } from './tutoring-type/tutoring-type.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatRadioModule} from '@angular/material/radio';
+import { SubmitReviewComponent } from './submit-review/submit-review.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin
@@ -68,6 +69,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CreateQuizComponent,
     ContactFormComponent,
     TutoringTypeComponent,
+    SubmitReviewComponent,
   ],
   imports: [
     BrowserModule,
