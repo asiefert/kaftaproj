@@ -46,6 +46,33 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + '/schedules/tutorid/' + val);
   }
 
+  // tutor
+  getTutorById(val: any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/tutors/tutorid/' + val);
+  }
+
+  addTutor(val: any) {
+    return this.http.post(this.APIUrl + '/tutors/', val);
+  }
+
+  updateTutor(val: any) {
+    return this.http.put(this.APIUrl + '/tutors/', val);
+  }
+
+  // Student
+  getStudentById(val: any): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/students/studentid/' + val);
+  }
+
+  addStudent(val: any) {
+    return this.http.post(this.APIUrl + '/students/', val);
+  }
+
+  updateStudent(val: any) {
+    return this.http.put(this.APIUrl + '/students/', val);
+  }
+
+
   addSchedules(val: any) {
     return this.http.post(this.APIUrl + '/schedules/', val);
   }

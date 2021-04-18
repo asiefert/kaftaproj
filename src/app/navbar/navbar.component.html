@@ -16,16 +16,6 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact-form" routerLinkActive="active">Help</a>
       </li>
-
-
-
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-      </li>
-
-
-
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" id="register" *ngIf="!auth.isAuthenticated">
@@ -44,7 +34,7 @@
           routerLinkActive="active">View Schedule</a>
           <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/managecalendar"
           routerLinkActive="active">Create Schedule</a>
-          <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/quizzes"
+          <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/quizzes/create"
           routerLinkActive="active">View Available Quizzes</a>
         </div>
       </li>
@@ -55,8 +45,12 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/register-student">My Student Profile</a>
+          <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/tutoringtype"
+          routerLinkActive="active">My Tutoring Type</a>
           <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/match"
           routerLinkActive="active">MATCH w/ Tutors' Interest and Budget</a>
+          <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/submitreview"
+          routerLinkActive="active">Submit a Review</a>
           <a class="dropdown-item" *ngIf="auth.isAuthenticated" routerLink="/takequizzes"
           routerLinkActive="active">Take Available Quizzes</a>
         </div>

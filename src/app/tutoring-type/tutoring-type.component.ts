@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'; 
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tutoring-type',
@@ -6,7 +6,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./tutoring-type.component.css']
 })
 export class TutoringTypeComponent {
+
   tutoringType: string;
   tutoringTypes: string[] = ['Lab/Homework Help', 'Exam Preparation', 'General Questions on Subject', 'Other'];
+
+
 }
 
