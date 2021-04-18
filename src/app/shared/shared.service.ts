@@ -68,6 +68,11 @@ export class SharedService {
     return this.http.delete(this.MongoApi + 'quizzes/' + val);
   }
 
+  submitReview(val: any) {
+    console.log(val);
+    return this.http.post(this.APIUrl + '/reviews', val);
+  }
+
   // uploadPhoto(val: any) {
   //   return this.http.post(this.APIUrl + '/user/savefile', val);
   // }

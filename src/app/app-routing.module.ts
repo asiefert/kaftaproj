@@ -21,8 +21,8 @@ import { AuthGuard } from './auth.guard';
 import { ResultsComponent } from './quizzes/take-quiz/results/results.component';
 import { CreateQuizComponent } from './quizzes/create-quiz/create-quiz.component';
 
-// import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
-// import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
+import { ManagecalendarComponent } from './member/managecalendar/managecalendar.component';
+import { ViewcalendarComponent } from './member/viewcalendar/viewcalendar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,9 +42,9 @@ const routes: Routes = [
   { path: 'quizzes', component: QuizzesComponent, canActivate: [AuthGuard] },
   { path: 'quizzes/take/:id', component: TakeQuizComponent, canActivate: [AuthGuard] },
   { path: 'quizzes/results', component: ResultsComponent, canActivate: [AuthGuard] },
-  { path: 'quizzes/create', component: CreateQuizComponent, canActivate: [AuthGuard] }
-  // { path: 'managecalendar', component: ManagecalendarComponent },
-  // { path: 'viewcalendar', component: ViewcalendarComponent },
+  { path: 'quizzes/create', component: CreateQuizComponent, canActivate: [AuthGuard] },
+  { path: 'managecalendar', component: ManagecalendarComponent, canActivate: [AuthGuard] },
+  { path: 'viewcalendar', component: ViewcalendarComponent, canActivate: [AuthGuard] },
 
 ];
 
