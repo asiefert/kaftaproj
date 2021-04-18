@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/auth.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-find-tutor',
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class FindTutorComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private service: SharedService) { }
   TutorList: any = [];
   PhotoFilePath!: string;
 
@@ -17,10 +17,10 @@ export class FindTutorComponent implements OnInit {
   }
 
   refreshTutorList() {
-    this.auth.getTutorList().subscribe(data => {
+    this.service.getTutorList().subscribe(data => {
       this.TutorList = data;
       console.log(this.TutorList);
-      this.PhotoFilePath = this.auth.PhotoUrl + "/";
+      this.PhotoFilePath = this.service.PhotoUrl + "/";
     });
   }
 }

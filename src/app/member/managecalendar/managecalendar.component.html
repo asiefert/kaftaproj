@@ -8,6 +8,26 @@
     Add Schedule
   </button>
 
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="close"
+          data-dismiss="modal" aria-label="Close"
+          (click)="closeClick()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-schedule [sched]="sched" *ngIf="ActivateAddEditCal">
+          </app-add-edit-schedule>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -15,18 +35,23 @@
         <th>Time</th>
         <th>Tutor Schedule Confirmed</th>
         <th>Tutor Feedback</th>
-        <th>Student Name</th>
+        <th>Student Id No.</th>
         <th>Student Confirmed</th>
-        <th>Is Completed</th>
         <th>Student Feedback</th>
+        <th>Is Completed</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of ScheduleList">
-        <td>{{item.EmployeeId}}</td>
-        <td>{{item.EmployeeName}}</td>
-        <td>{{item.Department}}</td>
-        <td>{{item.DateOfJoining}}</td>
+        <td>{{item.ScheduleDate | date:'MM/dd/yyyy'}} </td>
+        <td>{{item.Time}} </td>
+        <td>{{item.isTutorConfirmed ? 'True' : 'False' }}</td>
+        <td>{{item.TutorFeedback}}</td>
+        <td>{{item.StudentId}}</td>
+        <td>{{item.isStudentConfirmed ? 'True' : 'False' }}</td>
+        <td>{{item.StudentFeedback}}</td>
+        <td>{{item.isCompleted ? 'True' : 'False' }}</td>
         <td>
           <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal"
             (click)="editClick(item)" data-backdrop="static" data-keyboard="false">

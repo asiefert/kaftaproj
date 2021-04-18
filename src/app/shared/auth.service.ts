@@ -79,27 +79,4 @@ export class AuthService {
     localStorage.setItem(this.NAME_KEY, res.loginname)
     this.router.navigate(['/']);
   }
-
-  // no authentication tutor
-  getTutorList(): Observable<any[]> {
-    return this.http.get<any>(this.APIUrl + '/api/tutors');
-  }
-
-  getUser() {
-    return this.http.get(this.APIUrl + '/users/me', this.tokenHeader);
-  }
-
-  getUserList(): Observable<any[]> {
-    console.log('9');
-    console.log(this.tokenHeader);
-    return this.http.get<any>(this.APIUrl + '/api/users', this.tokenHeader);
-  }
-
-  //TODO: Remove hardcoding and let user be selected automatically when signed in
-  getMatchList(val: any): Observable<any[]> {
-    console.log('92');
-    console.log(this.tokenHeader);
-    return this.http.get<any>(this.APIUrl + '/api/students/match/' + val, this.tokenHeader);
-  }
-
 }

@@ -46,6 +46,18 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + '/schedules/tutorid/' + val);
   }
 
+  addSchedules(val: any) {
+    return this.http.post(this.APIUrl + '/schedules/', val);
+  }
+
+  updateSchedules(val: any) {
+    return this.http.put(this.APIUrl + '/schedules/', val);
+  }
+
+  deleteSchedule(ID: any) {
+    return this.http.delete(this.APIUrl + '/schedules/' + ID);
+  }
+
   getStudentScheduleList(val: any): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/schedules/studentid/' + val);
   }
@@ -61,10 +73,10 @@ export class SharedService {
   uploadQuiz(val: any): Observable<any> {
     const headers = { 'content-type': 'application/json' }
     const body = JSON.parse(val);
-    return this.http.post(this.MongoApi + 'quizzes/', body, { 'headers': headers, observe: 'response'})
-}
+    return this.http.post(this.MongoApi + 'quizzes/', body, { 'headers': headers, observe: 'response' })
+  }
 
-  deleteQuiz(val:any):Observable<any> {
+  deleteQuiz(val: any): Observable<any> {
     return this.http.delete(this.MongoApi + 'quizzes/' + val);
   }
 
@@ -80,5 +92,18 @@ export class SharedService {
   // getAllUserNames(): Observable<any[]> {
   //   return this.http.get<any>(this.APIUrl + '/user/GetAllDepartmentNames');
   // }
+
+  // getUser() {
+  //   return this.http.get(this.APIUrl + '/users/me', this.tokenHeader);
+  // }
+
+  // getUserList(): Observable<any[]> {
+  //   console.log('9');
+  //   console.log(this.tokenHeader);
+  //   return this.http.get<any>(this.APIUrl + '/api/users', this.tokenHeader);
+  // }
+
+
+
 }
 

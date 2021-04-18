@@ -38,6 +38,7 @@ import { TutoringTypeComponent } from './tutoring-type/tutoring-type.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRadioModule } from '@angular/material/radio';
 import { SubmitReviewComponent } from './submit-review/submit-review.component';
+import { AddEditScheduleComponent } from './member/add-edit-schedule/add-edit-schedule.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin
@@ -70,6 +71,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ContactFormComponent,
     TutoringTypeComponent,
     SubmitReviewComponent,
+    AddEditScheduleComponent,
   ],
   imports: [
     BrowserModule,
