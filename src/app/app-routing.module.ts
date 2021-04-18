@@ -16,6 +16,7 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { TakeQuizComponent } from './quizzes/take-quiz/take-quiz.component';
 import { EditComponent } from './edit/edit.component';
+import { SubmitReviewComponent } from './submit-review/submit-review.component';
 
 import { AuthGuard } from './auth.guard';
 import { ResultsComponent } from './quizzes/take-quiz/results/results.component';
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'quizzes/create', component: CreateQuizComponent, canActivate: [AuthGuard] },
   { path: 'managecalendar', component: ManagecalendarComponent, canActivate: [AuthGuard] },
   { path: 'viewcalendar', component: ViewcalendarComponent, canActivate: [AuthGuard] },
+  { path: 'submit-review', component: SubmitReviewComponent },
 
 ];
 

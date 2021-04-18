@@ -80,9 +80,14 @@ export class SharedService {
     return this.http.delete(this.MongoApi + 'quizzes/' + val);
   }
 
+  // Reviews
+  getReviewList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/reviews');
+  }
+
   submitReview(val: any) {
     console.log(val);
-    return this.http.post(this.APIUrl + '/reviews', val);
+    return this.http.post(this.APIUrl + '/submit-review', val);
   }
 
   // uploadPhoto(val: any) {

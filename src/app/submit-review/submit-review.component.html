@@ -1,17 +1,30 @@
 <div class="col-md-8 offset-md-2">
-  <h2 class="card-title">Submit a review!</h2>
+  <br>
+  <h5>THERE ARE NO REVIEWS UNTIL NOW</h5>
+  <tr *ngFor="let dataitem of ReviewList">
+    <td>
+      <h2 class="card-title">All the reviews for {{dataitem.FirstName}}</h2>
+      <hr>
+      <br>
+      <h5>
+        {{dataitem.Reviews}}
+      </h5>
+    </td>
+  </tr>
+
+  <h2 class="card-title">Submit a new review!</h2>
   <form action="">
     <hr>
     <div class="form-group row">
       <label for="name" class="col-sm-2 col-form-label">Name</label>
       <div class="col-sm-10">
-        <input id="name" name="name" required="required" [(ngModel)]="Name" class="form-control">
+        <input id="name" name="name" required="required" [(ngModel)]="Name" class="form-control" required>
       </div>
     </div>
     <div class="form-group row">
       <label for="rating" class="col-sm-2 col-form-label">Rating</label>
       <div class="col-sm-10 col-md-2">
-        <select id="rating" name="rating" [(ngModel)]="Rating" class="form-control">
+        <select id="rating" name="rating" [(ngModel)]="Rating" class="form-control" required>
           <option value="5">5</option>
           <option value="4">4</option>
           <option value="3">3</option>
@@ -23,13 +36,12 @@
     <div class="form-group row">
       <label for="review" class="col-sm-2 col-form-label">Review</label>
       <div class="col-sm-10">
-        <textarea name="review" id="review" rows="5" [(ngModel)]="Review" class="form-control"></textarea>
+        <textarea name="review" id="review" rows="5" [(ngModel)]="Review" class="form-control" required></textarea>
       </div>
     </div>
     <div class="form-group row">
       <div class="col-12">
         <button type="submit" class="btn btn-primary float-right" style="margin-left:15px" (click)="submitReview()">Submit review</button>
-        <button type="button" class="btn btn-default float-right">Cancel</button>
       </div>
     </div>
     <hr>
