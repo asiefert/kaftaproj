@@ -52,7 +52,6 @@ export class ManagecalendarComponent implements OnInit {
 
   deleteClick(item: any) {
     if (confirm('Are you sure?')) {
-
       this.service.deleteSchedule(item.ScheduleId).subscribe(data => {
         this.refreshscheduleList();
       })

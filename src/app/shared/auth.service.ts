@@ -11,6 +11,7 @@ export class AuthService {
   //readonly APIUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/api";
   //readonly PhotoUrl = "http://kaftanodejsapi-env.eba-je8nx85p.us-east-2.elasticbeanstalk.com/photos";
 
+  ID_KEY = 'ID';
   NAME_KEY = 'name';
   TOKEN_KEY = 'KAFTA_token';
 
@@ -18,6 +19,10 @@ export class AuthService {
 
   get name() {
     return localStorage.getItem(this.NAME_KEY);
+  }
+
+  get ID() {
+    return localStorage.getItem(this.ID_KEY);
   }
 
   get isAuthenticated() {
@@ -58,6 +63,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem(this.ID_KEY);
     localStorage.removeItem(this.NAME_KEY);
     localStorage.removeItem(this.TOKEN_KEY);
   }
@@ -72,11 +78,14 @@ export class AuthService {
   }
 
   authenticate(res: any) {
-    console.log(res.token);
+    // console.log(res.token);
+    // console.log(res.loginname);
+    // console.log(res.UserId);
     if (!res.token)
       return;
-    localStorage.setItem(this.TOKEN_KEY, res.token)
+    localStorage.setItem(this.ID_KEY, res.UserId)
     localStorage.setItem(this.NAME_KEY, res.loginname)
+    localStorage.setItem(this.TOKEN_KEY, res.token)
     this.router.navigate(['/']);
   }
 }
