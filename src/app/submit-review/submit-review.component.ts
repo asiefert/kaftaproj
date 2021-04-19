@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Router } from "@angular/router";
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-submit-review',
@@ -9,14 +10,31 @@ import { Router } from "@angular/router";
 })
 
 export class SubmitReviewComponent implements OnInit {
+  form: FormGroup;
+  constructor(private service: SharedService, 
+  private router: Router, private builder: FormBuilder) { 
 
-  constructor(private service: SharedService, private router: Router) { }
+  }
 
+  ReviewList: any = [];
   Name!: string;
   Rating!: string;
   Review!: string;
 
   ngOnInit(): void {
+    this.refreshReviews();
+    this.form = this.builder.group({
+      Name: this.builder.control('', [Validators.required]),
+      Rating: this.builder.control('', [Validators.required]),
+      Review: this.builder.control('', [Validators.required])
+    });
+  }
+
+  refreshReviews() {
+    this.service.getReviewList().subscribe(data => {
+      this.ReviewList = data;
+      console.log(this.ReviewList);
+    });
   }
 
   submitReview() {

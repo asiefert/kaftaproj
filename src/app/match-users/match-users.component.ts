@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-match-users',
@@ -8,19 +9,18 @@ import { SharedService } from '../shared/shared.service';
 })
 export class MatchUsersComponent implements OnInit {
 
-  constructor(private service: SharedService) { }
+  constructor(private auth: AuthService, private service: SharedService) { }
 
   MatchingTutors: any = [];
   PhotoFilePath!: string;
-
+  @Input() valueToPass = 0;
 
   ngOnInit(): void {
     this.refreshMatchingList();
   }
 
-  //TODO: Remove hardcoding so it pulls the authenticated user's id and matches based on that
   refreshMatchingList() {
-    this.service.getMatchList(1).subscribe(data => {
+    this.service.getMatchList(this.auth.ID).subscribe(data => {
       this.MatchingTutors = data;
       this.PhotoFilePath = this.service.PhotoUrl + "/";
     });

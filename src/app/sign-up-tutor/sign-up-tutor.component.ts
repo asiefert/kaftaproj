@@ -25,7 +25,7 @@ export class SignUpTutorComponent implements OnInit {
   }
 
   loadtutor() {
-    this.service.getTutorById(this.auth.ID)
+    this.service.getTutorById(1)
       .subscribe((data: any) => {
         this.ldata = data;
         this.Subject = data.Subject;

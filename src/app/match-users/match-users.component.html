@@ -1,7 +1,5 @@
-<h4 class="text-center">Please note: this component will be integrated with authentication during a later sprint. It
-  will also get the authenticated user's matches only.</h4>
-
-<h1 class="text-center">Here are tutors that match with your interest and budget:</h1>
+<div class="container">
+  <h1 class="text-center">Here are tutors that match with your interest and budget:</h1>
 <br>
 <!-- This should only show up if Matching Tutors is not an array but does exist-->
 <div *ngIf="MatchingTutors.length === 0 && MatchingTutors" class="container">
@@ -27,9 +25,14 @@
         <td><img src="{{PhotoFilePath}}{{dataitem.photo}}" height="250px;" width="200px;"></td>
         <td>First Name: {{dataitem.FirstName}}<br> Last Name: {{dataitem.LastName}} <br> Subject:
           {{dataitem.Subject}} <br> Price: ${{dataitem.price}} <br>
+
           <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal"
             data-backdrop="static" data-keyboard="false">
             View Video
+          </button>
+          <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal"
+          routerLink="/submitreview/" routerLinkActive="active">
+          Add review
           </button>
 
           <!-- Modal -->
@@ -44,7 +47,6 @@
                   </button>
                 </div>
                 <div class="modal-body">
-
                 </div>
               </div>
             </div>
@@ -56,3 +58,5 @@
 
   </table>
 </div>
+</div>
+

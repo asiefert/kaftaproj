@@ -36,7 +36,6 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + '/tutors');
   }
 
-  //TODO: Remove hardcoding and let user be selected automatically when signed in
   getMatchList(val: any): Observable<any[]> {
     return this.http.get<any>(this.APIUrl + '/students/match/' + val);
   }
@@ -72,6 +71,10 @@ export class SharedService {
     return this.http.put(this.APIUrl + '/students/', val);
   }
 
+  updateStudentTutoringType(val: any) {
+    console.log(this.APIUrl + '/students/type/');
+    return this.http.put(this.APIUrl + '/students/type/', val);
+  }
 
   addSchedules(val: any) {
     return this.http.post(this.APIUrl + '/schedules/', val);
@@ -107,9 +110,14 @@ export class SharedService {
     return this.http.delete(this.MongoApi + 'quizzes/' + val);
   }
 
+  // Reviews
+  getReviewList(): Observable<any[]> {
+    return this.http.get<any>(this.APIUrl + '/reviews');
+  }
+
   submitReview(val: any) {
     console.log(val);
-    return this.http.post(this.APIUrl + '/reviews', val);
+    return this.http.post(this.APIUrl + '/submit-review', val);
   }
 
   // uploadPhoto(val: any) {

@@ -5,13 +5,21 @@
 <mat-radio-group
   aria-labelledby="tutoring-type-label"
   class="tutoring-type"
-  [(ngModel)]="tutoringType">
-  <mat-radio-button class="radio-button" *ngFor="let tutoringType of tutoringTypes" [value]="tutoringType">
-    {{tutoringType}}
+  [(ngModel)]="tutoringtype">
+
+  <mat-radio-button class="radio-button"
+  *ngFor="let tutoringType of tutoringTypes"
+  [value]="tutoringType.id">
+    {{tutoringType.value}}
   </mat-radio-button>
 </mat-radio-group>
 
-<div>The Type of Tutoring You Need is: {{tutoringType}}</div>
+<!-- <div>The Type of Tutoring You Need is: {{tutoringType}}</div> -->
+
+<br><br>
+<button (click)="updateStudent()" class="btn btn-primary">
+  Update
+</button>
 
 </div>
 
